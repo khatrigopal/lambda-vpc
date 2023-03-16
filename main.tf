@@ -8,8 +8,10 @@ module "lambda_functions" {
       runtime         = "python3.8"
       code_directory  = "function1"
       description = "My first Lambda function"
-      subnet_ids    = ["subnet-0d0d0724f07cc3b62"]
-      security_group_ids = ["sg-0beedabf57aff77b0"]
+      vpc_config {
+        subnet_ids    = ["subnet-0d0d0724f07cc3b62"]
+        security_group_ids = ["sg-0beedabf57aff77b0"]
+      }
       timeout     = 10
       role = "arn:aws:iam::558940753150:role/lambda_custom_role"
       memory_size        = 128
