@@ -1,5 +1,5 @@
-variable "function_configurations" {
-  type = list(object({
+variable "lambda_functions" {
+  type    = map(object({
     function_name   = string
     handler         = string
     runtime         = string
