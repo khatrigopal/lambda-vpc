@@ -33,6 +33,7 @@ variable "account_name" {
   default = {
     dev  = "dtpl-insights-dev"
     intg = "dtpl-insights-intg"
+
   }
 }
 variable "code_repo" {
@@ -63,3 +64,16 @@ variable "test_name" {
 }
 
 #############
+
+variable "vpc_id" {
+  type = string
+}
+
+variable "subnet_ids" {
+  type = map(list(string))
+}
+
+variable "security_group_ids" {
+  type = map(list(string))
+}
+
