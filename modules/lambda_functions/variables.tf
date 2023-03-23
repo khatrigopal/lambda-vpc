@@ -6,16 +6,9 @@ variable "function_configurations" {
     code_directory  = string
     role = string
     timeout = number
+    subnet_ids = list(string)
+    security_group_ids = list(string)
     memory_size = number
   }))
 }
 
-variable "subnet_ids" {
-  type    = list(string)
-  default = []
-}
-
-variable "security_group_ids" {
-  type    = list(string)
-  default = []
-}
