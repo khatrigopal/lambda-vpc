@@ -10,8 +10,9 @@ resource "aws_lambda_function" "lambda_functions" {
   timeout                = each.value.timeout
   description            = each.value.description
  
-  subnet_ids         = each.value.subnet_ids
-  security_group_ids = each.value.security_group_ids
+  subnet_ids       = var.subnet_ids[each.value.name]
+  security_group_ids = var.security_group_ids[each.value.name]
+
   
   memory_size        = each.value.memory_size
   source_code_hash = filebase64sha256(data.archive_file.lambda_functions[each.key].output_path)
