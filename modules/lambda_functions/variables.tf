@@ -8,7 +8,7 @@ variable "function_configurations" {
     timeout = number
     vpc_id = string
     subnet_ids    = list(string)
-    #security_group_ids = list(string)
+    security_group_ids = list(string)
     memory_size = number
   }))
 }
