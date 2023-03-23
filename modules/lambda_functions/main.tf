@@ -10,8 +10,8 @@ resource "aws_lambda_function" "lambda_functions" {
   timeout                = each.value.timeout
   description            = each.value.description
   vpc_config {
-    subnet_ids         = each.value.subnet_ids
-    security_group_ids = each.value.security_group_ids
+    subnet_ids         = [each.value.subnet_ids]
+    security_group_ids = [each.value.security_group_ids]
   }
    
   memory_size        = each.value.memory_size
